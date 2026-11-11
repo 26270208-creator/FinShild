@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08111f">
+<meta name="description" content="FinShield is an educational FinTech prototype for credit burden estimation and suspicious-message awareness.">
+<title>FinShield — Smarter Money. Safer Decisions.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#07111f;--panel:#0d1a2b;--panel2:#102139;--line:rgba(180,205,240,.13);--text:#f3f7ff;--muted:#9aabc3;--blue:#6d9cff;--mint:#62e5c0;--amber:#ffd166;--red:#ff7c87;--radius:22px;--shadow:0 24px 70px rgba(0,0,0,.24)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:radial-gradient(ellipse at 15% -5%,rgba(63,111,202,.17),transparent 36%),radial-gradient(ellipse at 90% 20%,rgba(54,198,164,.08),transparent 28%),var(--bg);font-family:"DM Sans",sans-serif;color:var(--text);line-height:1.6}button,input,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}.container{width:min(1160px,calc(100% - 40px));margin:auto}.notice{padding:9px 16px;text-align:center;background:#0e2034;border-bottom:1px solid var(--line);font-size:.78rem;color:#c4d2e6}.notice strong{color:var(--mint)}header{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font:800 1.2rem Manrope,sans-serif;letter-spacing:-.04em}.logo{width:39px;height:39px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(145deg,#80aaff,#56e2c0);color:#061321;box-shadow:0 8px 26px #4c9aff30}.brand small{font:700 .62rem "DM Sans";letter-spacing:.08em;color:var(--mint);display:block}.links{display:flex;gap:26px;align-items:center;color:var(--muted);font-size:.88rem}.links a:hover{color:white}.navright{display:flex;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:13px;padding:11px 17px;font-weight:700;font-size:.88rem;cursor:pointer;transition:transform .2s,border-color .2s,background .2s;color:var(--text)}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(135deg,#78a2ff,#4f82ed);box-shadow:0 8px 24px #4e86f433;color:white}.secondary{background:#112139;border-color:var(--line)}.ghost{background:transparent;border-color:var(--line)}.menu{display:none;background:transparent;color:white;border:1px solid var(--line);border-radius:11px;padding:9px}.mobilelinks{display:none;padding:0 0 18px;gap:14px;flex-direction:column;color:var(--muted)}.mobilelinks.open{display:flex}.hero{padding:88px 0 76px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:54px}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid #6d9cff38;background:#6d9cff12;border-radius:100px;color:#a9c4ff;font-size:.77rem;font-weight:700;letter-spacing:.04em}.pulse{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px #62e5c01b}.hero h1{font:800 clamp(2.7rem,5.4vw,4.8rem)/1.06 Manrope,sans-serif;letter-spacing:-.065em;margin:22px 0}.gradient{background:linear-gradient(100deg,#fff 10%,#a8c5ff 56%,#62e5c0);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:1.08rem;max-width:570px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 25px}.proof{display:flex;gap:20px;flex-wrap:wrap;color:#b5c3d8;font-size:.8rem}.proof span{display:flex;align-items:center;gap:7px}.check{color:var(--mint)}.dashboard{position:relative;padding:22px;background:linear-gradient(145deg,#11233a,#0a1727);border:1px solid #a9c7f01c;border-radius:26px;box-shadow:var(--shadow);overflow:hidden}.dashboard:before{content:"";position:absolute;width:230px;height:230px;background:#548bff20;filter:blur(70px);right:-80px;top:-80px}.dash-head{position:relative;display:flex;justify-content:space-between;align-items:center;padding-bottom:17px;border-bottom:1px solid var(--line);font-size:.82rem;color:var(--muted)}.live{color:var(--mint);font-size:.72rem;font-weight:700}.dash-main{position:relative;padding:24px 0 20px}.dash-label{font-size:.78rem;color:var(--muted)}.dash-total{font:800 2.5rem Manrope,sans-serif;letter-spacing:-.05em;margin:5px 0}.dash-total small{font:600 .95rem "DM Sans";color:var(--muted)}.bar{height:9px;border-radius:100px;background:#ffffff12;overflow:hidden;margin:15px 0 8px}.bar span{display:block;height:100%;width:32.9%;background:linear-gradient(90deg,var(--blue),var(--mint));border-radius:inherit;transition:width .3s}.barlabels{display:flex;justify-content:space-between;color:var(--muted);font-size:.72rem}.dash-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#0815249c;border:1px solid var(--line);border-radius:15px;padding:15px}.mini small{display:block;color:var(--muted);font-size:.75rem}.mini strong{display:block;margin-top:5px;font:700 1.15rem Manrope}.mini .good{color:var(--mint)}.mini .warn{color:var(--amber)}.section{padding:82px 0;border-top:1px solid #ffffff08}.section-head{text-align:center;max-width:700px;margin:0 auto 40px}.kicker{color:var(--mint);font-size:.74rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.section h2{font:800 clamp(1.9rem,3.5vw,2.7rem)/1.16 Manrope,sans-serif;letter-spacing:-.045em;margin:10px 0 13px}.section-head p{color:var(--muted);margin:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(150deg,#102038d9,#0b1828e8);transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-4px);border-color:#7da7ff50}.iconbox{width:45px;height:45px;border-radius:14px;display:grid;place-items:center;background:#6d9cff17;color:#9cbbff;margin-bottom:17px;font-size:1.25rem}.iconbox.mint{background:#62e5c015;color:var(--mint)}.iconbox.amber{background:#ffd16616;color:var(--amber)}.card h3{font:700 1.1rem Manrope;margin:0 0 9px}.card p{color:var(--muted);font-size:.9rem;margin:0}.tool-wrap{background:#091625;border:1px solid var(--line);border-radius:26px;padding:25px;box-shadow:var(--shadow)}.tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:23px}.tab{border:1px solid var(--line);background:#0c1a2b;color:var(--muted);border-radius:12px;padding:11px 15px;font-weight:700;cursor:pointer}.tab.active{background:#6d9cff1d;color:#c7d8ff;border-color:#6d9cff77}.panel{display:none}.panel.active{display:block;animation:rise .25s ease}@keyframes rise{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.calcgrid,.fraudgrid{display:grid;grid-template-columns:1fr 1fr;gap:23px}.subpanel{background:#0d1a2b;border:1px solid var(--line);border-radius:19px;padding:24px}.subpanel h3{font:700 1.18rem Manrope;margin:0 0 6px}.subcopy{font-size:.84rem;color:var(--muted);margin:0 0 22px}.field{margin-bottom:16px}.field label{display:block;color:#bdcbe0;font-size:.82rem;font-weight:600;margin-bottom:7px}.inputwrap{position:relative}.inputwrap input,.textinput{width:100%;background:#071321;border:1px solid #9bb6db24;border-radius:12px;color:white;padding:13px 46px 13px 13px;outline:none;transition:border .2s}.inputwrap input:focus,.textinput:focus{border-color:var(--blue);box-shadow:0 0 0 3px #6d9cff18}.currency{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:.82rem;color:var(--muted);pointer-events:none}.hint{font-size:.72rem;color:#788ca8;margin-top:5px}.formactions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.results{height:100%;display:flex;flex-direction:column;gap:17px}.resulttop{display:flex;justify-content:space-between;align-items:center;gap:10px}.pill{display:inline-flex;align-items:center;border-radius:100px;padding:5px 10px;font-size:.72rem;font-weight:800;background:#ffffff0d;color:var(--muted)}.pill.safe{background:#62e5c019;color:var(--mint)}.pill.medium{background:#ffd16619;color:var(--amber)}.pill.high{background:#ff7c8719;color:var(--red)}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:11px}.metric{padding:16px;background:#071321;border:1px solid var(--line);border-radius:14px}.metric small{display:block;color:var(--muted);font-size:.73rem}.metric strong{display:block;font:800 1.65rem Manrope;margin-top:5px;letter-spacing:-.04em}.metric em{font-size:.73rem;font-style:normal;color:var(--muted)}.gauge-title{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:8px}.gauge{height:11px;border-radius:100px;background:linear-gradient(90deg,#62e5c0 0 30%,#ffd166 30% 40%,#ff7c87 40% 100%);position:relative;overflow:hidden}.gauge-marker{position:absolute;top:-3px;left:32.9%;width:4px;height:17px;border-radius:3px;background:white;box-shadow:0 0 0 2px #071321;transition:left .3s}.gauge-legend{display:flex;justify-content:space-between;font-size:.68rem;color:var(--muted);margin-top:7px}.explanation{padding:14px;border-radius:12px;background:#6d9cff0c;border-left:3px solid var(--blue);color:#bdcbe0;font-size:.83rem}.disclaimer{color:#8293ab;font-size:.72rem;margin-top:4px}.samples{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.sample{background:#12243a;border:1px solid var(--line);border-radius:100px;color:#c4d2e7;padding:7px 10px;font-size:.73rem;cursor:pointer}.sample:hover{border-color:#6d9cff88}.textinput{padding:14px;min-height:190px;resize:vertical;font-size:.88rem;line-height:1.6}.findings{display:flex;flex-direction:column;gap:13px}.findingshead{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:14px}.findingshead h3{margin:2px 0 0}.smallcaps{font-size:.7rem;color:var(--muted);letter-spacing:.1em;font-weight:800}.triggerlist{list-style:none;padding:0;margin:0;display:grid;gap:9px;max-height:260px;overflow:auto}.trigger{padding:12px;border-radius:11px;background:#ffffff05;border-left:3px solid var(--amber);font-size:.8rem}.trigger.high{border-color:var(--red)}.trigger strong{display:block;margin-bottom:3px}.trigger code{color:var(--amber);overflow-wrap:anywhere;font-size:.75rem}.safety{background:#62e5c00b;border:1px dashed #62e5c045;border-radius:13px;padding:14px}.safety h4{margin:0 0 7px;color:var(--mint);font-size:.83rem}.safety ul{padding-left:18px;margin:0;color:var(--muted);font-size:.79rem}.empty{color:var(--muted);font-size:.82rem;padding:15px;background:#ffffff05;border-radius:11px}.analytics{display:grid;grid-template-columns:1fr 1fr;gap:17px}.chart{padding:24px;border:1px solid var(--line);background:var(--panel);border-radius:20px}.chart h3{font:700 1.03rem Manrope;margin:0}.chart p{color:var(--muted);font-size:.8rem}.bars{display:flex;align-items:end;gap:18px;height:190px;padding:18px 10px 0;border-bottom:1px solid var(--line)}.barcol{flex:1;height:100%;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:8px}.barcol b{font-size:.78rem}.barcol span{width:min(70px,100%);height:var(--h);border-radius:9px 9px 2px 2px;background:var(--c)}.barcol small{font-size:.7rem;color:var(--muted);text-align:center}.budget{display:grid;grid-template-columns:140px 1fr;align-items:center;gap:25px;min-height:190px}.donut{width:140px;height:140px;border-radius:50%;background:conic-gradient(var(--blue) 0 50%,var(--mint) 50% 80%,var(--amber) 80% 100%);display:grid;place-items:center}.donut:after{content:"50 / 30 / 20";display:grid;place-items:center;width:93px;height:93px;background:var(--panel);border-radius:50%;font-weight:800;font-size:.77rem}.legend{display:grid;gap:12px;font-size:.79rem}.legend span{display:flex;align-items:center;gap:8px;color:#c7d4e8}.swatch{width:9px;height:9px;border-radius:3px}.integrationgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.integration{padding:23px;border:1px solid var(--line);border-radius:19px;background:var(--panel)}.integration .tag{font-size:.68rem;font-weight:800;letter-spacing:.08em;color:var(--blue);text-transform:uppercase}.integration h3{font:700 1rem Manrope;margin:8px 0}.integration p{color:var(--muted);font-size:.83rem;margin:0 0 16px}.placeholder{min-height:68px;border:1px dashed #9bb6db30;background:#071321;border-radius:12px;display:grid;place-items:center;text-align:center;padding:12px;color:#8194af;font-size:.77rem;margin-bottom:13px}.aboutbox{padding:30px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(130deg,#11233a,#0b1727)}.team{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:23px}.person{display:flex;align-items:center;gap:13px;padding:16px;background:#07132199;border:1px solid var(--line);border-radius:14px}.avatar{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;background:#6d9cff22;color:#b5cbff;font-weight:800}.person strong{display:block;font-size:.9rem}.person small{color:var(--muted);font-size:.75rem}.footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:.8rem}.footrow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.toast{position:fixed;right:22px;bottom:22px;z-index:60;background:#13253b;border:1px solid #6d9cff77;border-radius:13px;padding:13px 17px;box-shadow:var(--shadow);max-width:min(360px,calc(100vw - 44px));font-size:.85rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:translateY(0)}:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+@media(max-width:900px){.links,.navright{display:none}.menu{display:block}.hero-grid{grid-template-columns:1fr;gap:35px}.hero-copy{max-width:720px}.dashboard{max-width:650px;width:100%;margin:auto}.grid3{grid-template-columns:1fr 1fr}.grid3 .card:last-child{grid-column:span 2}.calcgrid,.fraudgrid{grid-template-columns:1fr}.analytics{grid-template-columns:1fr}}
+@media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav{height:66px}.brand{font-size:1.05rem}.hero{padding:55px 0}.hero h1{font-size:clamp(2.45rem,12vw,3.7rem)}.hero p{font-size:.98rem}.actions .btn{width:100%}.dashboard{padding:16px}.dash-total{font-size:2.1rem}.section{padding:60px 0}.section-head{margin-bottom:28px}.grid3,.integrationgrid,.team{grid-template-columns:1fr}.grid3 .card:last-child{grid-column:auto}.tool-wrap{padding:12px;border-radius:19px}.subpanel{padding:17px}.metrics{gap:8px}.metric{padding:12px}.metric strong{font-size:1.4rem}.budget{grid-template-columns:1fr;justify-items:center;gap:17px}.legend{width:100%}.aboutbox{padding:20px}.footrow{flex-direction:column}.tabs .tab{flex:1}.notice{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</head>
+<body>
+<div class="notice" role="note">🛡️ <strong>Educational prototype</strong> · Demonstration only — not an official credit score, bank service, or definitive fraud detector.</div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="FinShield home"><span class="logo" aria-hidden="true">◈</span><span>FinShield<small>SMART FINANCE · SAFER DECISIONS</small></span></a>
+    <nav class="links" aria-label="Main navigation"><a href="#approach">Platform</a><a href="#tools">Tools</a><a href="#insights">Insights</a><a href="#integrations">Resources</a><a href="#share">QR code</a><a href="#about">About</a></nav>
+    <div class="navright"><a class="btn secondary" href="#tools" data-tool="credit">CreditGuard</a><a class="btn primary" href="#tools" data-tool="fraud">FraudCheck ↗</a></div>
+    <button class="menu" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+  <nav class="container mobilelinks" id="mobileLinks" aria-label="Mobile navigation"><a href="#approach">Platform</a><a href="#tools">Interactive tools</a><a href="#insights">Insights</a><a href="#integrations">Resources</a><a href="#share">QR code</a><a href="#about">About</a></nav>
+</header>
+<main id="home">
+<section class="hero"><div class="container hero-grid">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="pulse"></span> FINTECH × DIGITAL SAFETY</div>
+    <h1>Make money decisions with <span class="gradient">confidence.</span></h1>
+    <p>Understand your monthly credit burden. Spot common scam tactics. Make your next financial decision with more clarity — not more pressure.</p>
+    <div class="actions"><a class="btn primary" href="#tools" data-tool="credit">Explore CreditGuard <span aria-hidden="true">↗</span></a><a class="btn secondary" href="#tools" data-tool="fraud">Check a suspicious message</a></div>
+    <div class="proof"><span><b class="check">✓</b> Runs in your browser</span><span><b class="check">✓</b> No account required</span><span><b class="check">✓</b> KZT-focused examples</span></div>
+  </div>
+  <div class="dashboard" aria-label="Illustrative FinShield dashboard preview">
+    <div class="dash-head"><span>PERSONAL FINANCE SNAPSHOT</span><span class="live">● DEMO MODE</span></div>
+    <div class="dash-main"><div class="dash-label">Projected monthly credit burden</div><div class="dash-total">32.9<small>% of income</small></div><div class="bar"><span></span></div><div class="barlabels"><span>0% · Lower</span><span>30–40% · Review</span><span>60%+</span></div></div>
+    <div class="dash-stats"><div class="mini"><small>Monthly income</small><strong>₸350,000</strong></div><div class="mini"><small>Projected payments</small><strong>₸115,000</strong></div><div class="mini"><small>CreditGuard</small><strong class="warn">Review range</strong></div><div class="mini"><small>FraudCheck</small><strong class="good">Rule-based scan</strong></div></div>
+    <p class="disclaimer">Illustrative sample values. These are not live financial data or official lending thresholds.</p>
+  </div>
+</div></section>
+<section class="section" id="approach"><div class="container">
+  <div class="section-head"><span class="kicker">Why FinShield</span><h2>Clarity for two everyday risks.</h2><p>Personal finance can be complicated. Fraud messages can be convincing. FinShield turns common warning signs into practical, understandable steps.</p></div>
+  <div class="grid3">
+    <article class="card"><div class="iconbox">↗</div><h3>See the full picture</h3><p>Estimate how existing and potential monthly repayments compare with take-home income before taking on another commitment.</p></article>
+    <article class="card"><div class="iconbox mint">⌁</div><h3>Recognize pressure tactics</h3><p>Review messages for common signs such as urgency, suspicious links, impersonation, secrecy, and requests for verification codes.</p></article>
+    <article class="card"><div class="iconbox amber">◉</div><h3>Keep control of your data</h3><p>Calculations and message checks run locally in this page. Do not enter passwords, card details, IINs, or other sensitive information.</p></article>
+  </div>
+</div></section>
+<section class="section" id="tools"><div class="container">
+  <div class="section-head"><span class="kicker">Interactive workspace</span><h2>Try the tools yourself.</h2><p>Change the example values or paste a message to see how the educational checks work.</p></div>
+  <div class="tool-wrap">
+    <div class="tabs" role="tablist" aria-label="FinShield tools"><button class="tab active" id="tabCredit" role="tab" aria-selected="true" aria-controls="panelCredit" data-tab="credit">01 · CreditGuard</button><button class="tab" id="tabFraud" role="tab" aria-selected="false" aria-controls="panelFraud" data-tab="fraud">02 · FraudCheck</button></div>
+    <section class="panel active" id="panelCredit" role="tabpanel" aria-labelledby="tabCredit">
+      <div class="calcgrid">
+        <div class="subpanel"><h3>Estimate your credit burden</h3><p class="subcopy">Enter monthly amounts in Kazakhstani tenge (KZT). Your figures are processed in this browser session only.</p>
+          <div class="field"><label for="income">Net monthly income</label><div class="inputwrap"><input id="income" type="number" min="1" max="1000000000" step="1000" value="350000" inputmode="numeric"><span class="currency">KZT</span></div><div class="hint">Your income after tax and mandatory deductions.</div></div>
+          <div class="field"><label for="existing">Current monthly loan payments</label><div class="inputwrap"><input id="existing" type="number" min="0" max="1000000000" step="500" value="70000" inputmode="numeric"><span class="currency">KZT</span></div><div class="hint">Include loan and installment repayments.</div></div>
+          <div class="field"><label for="additional">Potential new monthly payment</label><div class="inputwrap"><input id="additional" type="number" min="0" max="1000000000" step="500" value="45000" inputmode="numeric"><span class="currency">KZT</span></div><div class="hint">A scenario to explore — not a loan offer.</div></div>
+          <div class="formactions"><button class="btn primary" id="recalculate">Update estimate</button><button class="btn secondary" id="resetCalc">Reset example</button></div>
+        </div>
+        <div class="subpanel results" aria-live="polite">
+          <div class="resulttop"><div><div class="smallcaps">YOUR SCENARIO</div><h3>Credit snapshot</h3></div><span class="pill medium" id="rangePill">Review range</span></div>
+          <div class="metrics"><div class="metric"><small>Current burden</small><strong id="currentRatio">20.0%</strong><em id="currentPayments">₸70,000 / month</em></div><div class="metric"><small>After new payment</small><strong id="projectedRatio">32.9%</strong><em id="projectedPayments">₸115,000 / month</em></div></div>
+          <div><div class="gauge-title"><span>Projected payments / income</span><strong id="gaugeLabel">32.9%</strong></div><div class="gauge"><span class="gauge-marker" id="gaugeMarker"></span></div><div class="gauge-legend"><span>Lower</span><span>Review</span><span>Higher</span></div></div>
+          <div class="explanation" id="calcExplanation">The example falls in the review range. A new payment could leave less room for savings and unexpected expenses.</div>
+          <div class="disclaimer">Educational model only. The 30% and 40% markers are illustrative guideposts, not official Kazakhstan lending rules or a credit decision.</div>
+        </div>
+      </div>
+    </section>
+    <section class="panel" id="panelFraud" role="tabpanel" aria-labelledby="tabFraud" hidden>
+      <div class="fraudgrid">
+        <div class="subpanel"><h3>Scan a suspicious message</h3><p class="subcopy">Paste text from an SMS, email, or chat. The checker looks for known patterns; it does not contact a bank or use an AI model.</p>
+          <div class="samples"><button class="sample" data-sample="phishing">SMS code request</button><button class="sample" data-sample="urgent">Urgent account threat</button><button class="sample" data-sample="safe">Routine notification</button></div>
+          <label class="hint" for="message" style="display:block;margin-bottom:8px">MESSAGE TEXT</label><textarea class="textinput" id="message" maxlength="5000" placeholder="Paste the message here. Avoid including personal or account details."></textarea>
+          <div class="formactions"><button class="btn primary" id="scanBtn">Analyze message</button><button class="btn secondary" id="clearMsg">Clear</button></div>
+          <div class="hint" id="charCount">0 / 5000 characters</div>
+        </div>
+        <div class="subpanel findings" aria-live="polite">
+          <div class="findingshead"><div><div class="smallcaps">PATTERN REVIEW</div><h3 id="riskTitle">Ready when you are</h3></div><span class="pill" id="riskPill">NOT SCANNED</span></div>
+          <p class="subcopy" id="riskSummary">Choose a sample or enter text, then run the check.</p>
+          <ul class="triggerlist" id="triggerList"><li class="empty">No message analyzed yet.</li></ul>
+          <div class="safety"><h4>Recommended next steps</h4><ul id="safetyList"><li>Never share one-time codes, PINs, passwords, or CVV numbers.</li><li>Verify unexpected requests using the official app or a trusted number.</li><li>Do not click links in unexpected messages.</li></ul></div>
+          <div class="disclaimer">A warning is not proof of fraud. No detected pattern does not mean a message is safe. Verify independently.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div></section>
+<section class="section" id="insights"><div class="container">
+  <div class="section-head"><span class="kicker">Financial literacy</span><h2>Make the numbers easier to understand.</h2><p>Simple visual examples can help build good habits — as long as sample data is not mistaken for research results.</p></div>
+  <div class="analytics">
+    <article class="chart"><div class="smallcaps">SYNTHETIC EXAMPLE</div><h3>Sample message patterns</h3><p>Illustrative training set: 25 fictional examples, not real-world prevalence data.</p><div class="bars" role="img" aria-label="Illustrative examples: 12 lower-signal, 8 review, 5 higher-signal"><div class="barcol"><b>12</b><span style="--h:120px;--c:var(--mint)"></span><small>Lower signals</small></div><div class="barcol"><b>8</b><span style="--h:80px;--c:var(--amber)"></span><small>Review</small></div><div class="barcol"><b>5</b><span style="--h:50px;--c:var(--red)"></span><small>Higher signals</small></div></div></article>
+    <article class="chart"><div class="smallcaps">BUDGETING FRAMEWORK</div><h3>A simple 50 / 30 / 20 model</h3><p>A common starting point for thinking about income allocation; adapt it to your real needs and obligations.</p><div class="budget"><div class="donut" role="img" aria-label="50 percent needs, 30 percent wants, 20 percent savings and financial goals"></div><div class="legend"><span><i class="swatch" style="background:var(--blue)"></i><b>50%</b> Needs and bills</span><span><i class="swatch" style="background:var(--mint)"></i><b>30%</b> Wants and flexible spending</span><span><i class="swatch" style="background:var(--amber)"></i><b>20%</b> Savings and financial goals</span></div></div><p>Debt repayments may need to be accounted for separately depending on your circumstances; this is not a universal rule.</p></article>
+  </div>
+</div></section>
+<section class="section" id="integrations"><div class="container">
+  <div class="section-head"><span class="kicker">Project resources</span><h2>Connect your research materials.</h2><p>These cards are integration placeholders. Add real share or embed links before presenting them as connected services.</p></div>
+  <div class="integrationgrid">
+    <article class="integration"><span class="tag">Google Forms</span><h3>Feedback & usability survey</h3><p>Collect feedback from classmates and evaluators about clarity and ease of use.</p><div class="placeholder" id="formsPlaceholder">No survey connected yet.</div><button class="btn secondary configure" data-service="Google Forms">Add survey link</button></article>
+    <article class="integration"><span class="tag">Google Sheets</span><h3>Research data & analytics</h3><p>Show a published spreadsheet or chart with consent-based, anonymized project data.</p><div class="placeholder" id="sheetsPlaceholder">No spreadsheet connected yet.</div><button class="btn secondary configure" data-service="Google Sheets">Add spreadsheet link</button></article>
+    <article class="integration"><span class="tag">Google Docs</span><h3>Financial literacy guide</h3><p>Link to your project documentation, definitions, and practical safety checklist.</p><div class="placeholder" id="docsPlaceholder">No guide connected yet.</div><button class="btn secondary configure" data-service="Google Docs">Add guide link</button></article>
+    <article class="integration"><span class="tag">YouTube</span><h3>Project video presentation</h3><p>Embed a project walkthrough or demonstration video when it is ready to share.</p><div class="placeholder" id="youtubePlaceholder">No video connected yet.</div><button class="btn secondary configure" data-service="YouTube">Add video link</button></article>
+  </div>
+</div></section>
+
+<section class="section" id="share"><div class="container">
+  <div class="section-head"><span class="kicker">Share FinShield</span><h2>Open the project with a QR code.</h2>
+    <p>After publishing this website, the QR code will point to its public address. Scan it with a phone to open FinShield.</p>
+  </div>
+  <div class="tool-wrap" style="max-width:620px;margin:auto;text-align:center">
+    <div id="qrStatus" class="subcopy">Preparing your website QR code…</div>
+    <div style="display:inline-grid;place-items:center;background:white;padding:16px;border-radius:18px;min-width:230px;min-height:230px">
+      <div id="qrcode" aria-label="QR code for this website"></div>
+    </div>
+    <p class="hint" id="qrAddress" style="overflow-wrap:anywhere;margin:14px 0"></p>
+    <div class="formactions" style="justify-content:center">
+      <button class="btn primary" id="refreshQR" type="button">Refresh QR code</button>
+      <button class="btn secondary" id="copySiteLink" type="button">Copy website link</button>
+    </div>
+    <p class="disclaimer">Important: a QR code created from a local file address will only work on your device. Publish the site first (for example, with GitHub Pages or Netlify), then refresh the QR code using the public website URL.</p>
+  </div>
+</div></section>
+
+<section class="section" id="about"><div class="container"><div class="aboutbox">
+  <span class="kicker">Academic project · 2026</span><h2>Built to make financial safety more approachable.</h2><p style="color:var(--muted);max-width:760px">FinShield is an educational MVP for an Information and Communication Technologies course. It combines a transparent credit-burden estimate with rule-based awareness of common social-engineering patterns. It is not a financial institution, credit bureau, or security service.</p>
+  <div class="team"><div class="person"><div class="avatar">MT</div><div><strong>Маметова Тоғжан</strong><small>Co-developer · FinTech design</small></div></div><div class="person"><div class="avatar">AI</div><div><strong>Абдурасул Индира</strong><small>Co-developer · Security architecture</small></div></div></div>
+  <p class="disclaimer">Group: ФИН261(4)_2 · Course: Information and Communication Technologies · Project year: 2026</p>
+</div></div></section>
+</main>
+<footer class="footer"><div class="container footrow"><span>© 2026 FinShield · Academic MVP demonstration</span><span>Privacy-first by design · Demo data only · Kazakhstan</span><a href="#home">Back to top ↑</a></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  let toastTimer;
+  function toast(message) {
+    const el = $('toast'); el.textContent = message; el.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
+  }
+  function money(n) {
+    return new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(Math.round(n)) + ' ₸';
+  }
+  function safeNumber(id, min, max) {
+    const el = $(id), raw = el.value.trim();
+    if (raw === '') return null;
+    const n = Number(raw);
+    if (!Number.isFinite(n) || n < min || n > max) return null;
+    return n;
+  }
+  function calculate() {
+    const income = safeNumber('income', 1, 1e9);
+    const existing = safeNumber('existing', 0, 1e9);
+    const additional = safeNumber('additional', 0, 1e9);
+    const inputs = [['income',income],['existing',existing],['additional',additional]];
+    inputs.forEach(([id,v]) => $(id).setAttribute('aria-invalid', v === null ? 'true' : 'false'));
+    if (income === null || existing === null || additional === null) {
+      $('calcExplanation').textContent = 'Please enter a valid income greater than zero and non-negative payment amounts. Values must be no more than ₸1,000,000,000.';
+      $('rangePill').textContent = 'Check inputs'; $('rangePill').className = 'pill high';
+      $('currentRatio').textContent = '—'; $('projectedRatio').textContent = '—';
+      $('currentPayments').textContent = 'Enter valid values'; $('projectedPayments').textContent = 'Enter valid values';
+      $('gaugeLabel').textContent = '—'; $('gaugeMarker').style.left = '0%';
+      return;
+    }
+    const current = existing / income * 100;
+    const projectedPayments = existing + additional;
+    const projected = projectedPayments / income * 100;
+    $('currentRatio').textContent = current.toFixed(1) + '%';
+    $('projectedRatio').textContent = projected.toFixed(1) + '%';
+    $('currentPayments').textContent = money(existing) + ' / month';
+    $('projectedPayments').textContent = money(projectedPayments) + ' / month';
+    $('gaugeLabel').textContent = projected.toFixed(1) + '%';
+    $('gaugeMarker').style.left = Math.min(98, Math.max(0, projected)) + '%';
+    const pill = $('rangePill');
+    if (projected < 30) {
+      pill.className = 'pill safe'; pill.textContent = 'Lower guide range';
+      $('calcExplanation').textContent = `Your estimated payment ratio is ${projected.toFixed(1)}%. In this educational model, that is below 30%. Check that essentials, savings, and unexpected costs remain affordable.`;
+    } else if (projected <= 40) {
+      pill.className = 'pill medium'; pill.textContent = 'Review range';
+      $('calcExplanation').textContent = `Your estimated payment ratio is ${projected.toFixed(1)}%. This falls in the model's 30–40% review range. Consider whether a new payment would reduce your emergency cushion.`;
+    } else {
+      pill.className = 'pill high'; pill.textContent = 'Higher guide range';
+      $('calcExplanation').textContent = `Your estimated payment ratio is ${projected.toFixed(1)}%, above the model's 40% guidepost. Review your budget carefully before taking on more obligations. This is not a lending decision.`;
+    }
+  }
+  $('recalculate').addEventListener('click', calculate);
+  ['income','existing','additional'].forEach(id => $(id).addEventListener('input', calculate));
+  $('resetCalc').addEventListener('click', () => {
+    $('income').value = 350000; $('existing').value = 70000; $('additional').value = 45000;
+    calculate(); toast('Example values restored.');
+  });
+
+  function setTab(which) {
+    const credit = which === 'credit';
+    $('panelCredit').classList.toggle('active', credit);
+    $('panelFraud').classList.toggle('active', !credit);
+    $('panelCredit').hidden = !credit; $('panelFraud').hidden = credit;
+    $('tabCredit').classList.toggle('active', credit); $('tabFraud').classList.toggle('active', !credit);
+    $('tabCredit').setAttribute('aria-selected', String(credit));
+    $('tabFraud').setAttribute('aria-selected', String(!credit));
+  }
+  document.querySelectorAll('[data-tab]').forEach(btn => btn.addEventListener('click', () => setTab(btn.dataset.tab)));
+  document.querySelectorAll('[data-tool]').forEach(link => link.addEventListener('click', () => setTab(link.dataset.tool)));
+
+  const rules = [
+    {id:'code',title:'Request for a verification code or password',severity:'high',re:/(?:sms\s*код|смс[- ]?код|код из смс|код подтверждения|verification code|one[- ]time code|\botp\b|\bcvv\b|pin[- ]?код|пароль)/i,advice:'Never share one-time codes, PINs, CVV numbers, or passwords. Verify through the official service.'},
+    {id:'urgency',title:'Urgency or time pressure',severity:'medium',re:/срочно|немедленно|в течение \d+|прямо сейчас|немедленно|urgent|immediately|within \s?\d+\s?(?:minutes?|hours?)|act now|limited time|счет будет заблокирован/i,advice:'Pause. Pressure and threats are commonly used to prevent careful verification.'},
+    {id:'link',title:'Link or shortened URL',severity:'high',re:/https?:\/\/[^\s]+|www\.[^\s]+|bit\.ly|tinyurl|t\.me\/|wa\.me\/|\.xyz\b|\.top\b|\.click\b|перейдите по ссылке/i,advice:'Avoid opening unexpected links. Open the official app or type the known website address yourself.'},
+    {id:'authority',title:'Possible authority or bank impersonation',severity:'high',re:/служба безопасности|нацбанк|национальный банк|сотрудник банка|менеджер банка|мвд|полици[яи]|следователь|security department|bank employee|central bank|fraud department/i,advice:'Do not trust a caller based only on their claimed role. End the interaction and contact the institution using an official number.'},
+    {id:'secrecy',title:'Demand for secrecy',severity:'medium',re:/никому не говорите|не сообщайте родственникам|не отключайте звонок|строго конфиденциально|секретно|strictly confidential|tell no one|keep this secret/i,advice:'A demand for secrecy is a warning sign. Ask a trusted person and verify independently.'},
+    {id:'transfer',title:'Request to move money or use a “safe account”',severity:'high',re:/безопасный счет|резервный счет|переведите деньги|перевод средств|снимите наличные|safe account|transfer funds|move your money|secure account/i,advice:'Do not transfer money to a so-called safe account. Contact your bank directly using official contact details.'},
+    {id:'credential',title:'Request for personal or card details',severity:'high',re:/номер карты|данные карты|полный номер карты|иин|удостоверени[яе] личности|card details|card number|national id|personal identification/i,advice:'Do not send sensitive identity or payment details in response to an unsolicited message.'}
+  ];
+  const samples = {
+    phishing:'Служба безопасности банка: обнаружена подозрительная операция. Срочно отправьте код подтверждения из SMS нашему сотруднику, чтобы остановить списание.',
+    urgent:'Внимание! Ваш счет будет заблокирован в течение 30 минут. Немедленно перейдите по ссылке https://bit.ly/protect-account и переведите средства на безопасный счет.',
+    safe:'Your monthly statement is available in the official mobile app. Open the app directly to review your recent transactions.'
+  };
+  function analyze() {
+    const text = $('message').value.trim();
+    $('charCount').textContent = `${$('message').value.length} / 5000 characters`;
+    const list = $('triggerList'), tips = $('safetyList'), pill = $('riskPill');
+    list.replaceChildren(); tips.replaceChildren();
+    if (!text) {
+      $('riskTitle').textContent = 'Ready when you are'; $('riskSummary').textContent = 'Enter a message or choose a sample to begin.';
+      pill.textContent = 'NOT SCANNED'; pill.className = 'pill';
+      list.innerHTML = '<li class="empty">No message analyzed yet.</li>';
+      tips.innerHTML = '<li>Never share one-time codes, PINs, passwords, or CVV numbers.</li><li>Verify unexpected requests using the official app or a trusted number.</li><li>Do not click links in unexpected messages.</li>';
+      return;
+    }
+    const found = rules.map(rule => ({...rule, match: text.match(rule.re)})).filter(rule => rule.match);
+    if (!found.length) {
+      $('riskTitle').textContent = 'No common patterns detected';
+      $('riskSummary').textContent = 'The text did not match the patterns checked by this simple rule-based tool.';
+      pill.textContent = 'NO MATCH'; pill.className = 'pill safe';
+      const li = document.createElement('li'); li.className = 'empty'; li.textContent = 'No configured warning patterns matched. This does not confirm the message is safe.'; list.append(li);
+      ['Verify unexpected messages through official channels.','Never share passwords or one-time codes.','If the message creates pressure or seems unusual, contact the sender independently.'].forEach(t => {const li=document.createElement('li');li.textContent=t;tips.append(li);});
+      return;
+    }
+    const high = found.filter(x => x.severity === 'high').length;
+    const level = high >= 2 || found.length >= 3 ? 'high' : 'medium';
+    $('riskTitle').textContent = level === 'high' ? 'Multiple warning signs found' : 'Potential warning signs found';
+    $('riskSummary').textContent = `${found.length} configured pattern${found.length===1?'':'s'} matched. Review the indicators below; a match is not proof of fraud.`;
+    pill.textContent = level === 'high' ? 'HIGHER SIGNAL' : 'REVIEW'; pill.className = `pill ${level}`;
+    found.forEach(item => {
+      const li = document.createElement('li'); li.className = `trigger ${item.severity === 'high' ? 'high' : ''}`;
+      const strong = document.createElement('strong'); strong.textContent = item.title;
+      const match = document.createElement('code'); match.textContent = `Matched phrase: “${item.match[0]}”`;
+      li.append(strong, match); list.append(li);
+      const tip = document.createElement('li'); tip.textContent = item.advice; tips.append(tip);
+    });
+  }
+  $('scanBtn').addEventListener('click', analyze);
+  $('message').addEventListener('input', () => { $('charCount').textContent = `${$('message').value.length} / 5000 characters`; });
+  $('message').addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') analyze(); });
+  $('clearMsg').addEventListener('click', () => { $('message').value = ''; analyze(); $('charCount').textContent = '0 / 5000 characters'; });
+  document.querySelectorAll('[data-sample]').forEach(btn => btn.addEventListener('click', () => {
+    $('message').value = samples[btn.dataset.sample]; analyze(); toast('Demo message loaded.');
+  }));
+
+  $('menuBtn').addEventListener('click', () => {
+    const open = $('mobileLinks').classList.toggle('open');
+    $('menuBtn').setAttribute('aria-expanded', String(open));
+  });
+  $('mobileLinks').querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    $('mobileLinks').classList.remove('open'); $('menuBtn').setAttribute('aria-expanded','false');
+  }));
+  document.querySelectorAll('.configure').forEach(btn => btn.addEventListener('click', () => {
+    const service = btn.dataset.service;
+    const url = window.prompt(`Paste the public share or embed URL for ${service}:`);
+    if (url === null) return;
+    const trimmed = url.trim();
+    if (!trimmed) { toast('No link entered.'); return; }
+    let parsed;
+    try { parsed = new URL(trimmed); } catch { toast('Please enter a complete URL beginning with https://'); return; }
+    if (parsed.protocol !== 'https:' || !['http:','https:'].includes(parsed.protocol)) { toast('Only secure HTTPS links are accepted.'); return; }
+    const id = service === 'Google Forms' ? 'formsPlaceholder' : service === 'Google Sheets' ? 'sheetsPlaceholder' : service === 'Google Docs' ? 'docsPlaceholder' : 'youtubePlaceholder';
+    const box = $(id); box.replaceChildren();
+    const link = document.createElement('a'); link.href = parsed.href; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = `Open connected ${service} resource ↗`; link.style.color = 'var(--mint)'; link.style.fontWeight = '700';
+    box.append(link); toast(`${service} link added for this page session.`);
+  }));
+
+  // QR sharing: uses the current page URL. After publishing, this becomes the public site URL.
+  function buildSiteQR() {
+    const target = window.location.href.split('#')[0];
+    const qrBox = $('qrcode');
+    const status = $('qrStatus');
+    const address = $('qrAddress');
+    if (!qrBox || !status || !address) return;
+    qrBox.replaceChildren();
+    address.textContent = target;
+    if (typeof QRCode === 'undefined') {
+      status.textContent = 'QR library could not load. Check your internet connection and refresh.';
+      return;
+    }
+    new QRCode(qrBox, {
+      text: target,
+      width: 196,
+      height: 196,
+      colorDark: '#07111f',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+    status.textContent = 'QR code ready. Scan it with your phone camera.';
+  }
+  const refreshQRButton = $('refreshQR');
+  if (refreshQRButton) refreshQRButton.addEventListener('click', buildSiteQR);
+  const copySiteButton = $('copySiteLink');
+  if (copySiteButton) copySiteButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href.split('#')[0]);
+      toast('Website link copied.');
+    } catch {
+      toast('Copy is unavailable here. Copy the address from your browser.');
+    }
+  });
+
+  calculate(); analyze();
+  buildSiteQR();
+})();
+</script>
+</body>
+</html>
